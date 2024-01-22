@@ -1,0 +1,11 @@
+Notas:
+
+Bibliotecas baixadas:
+
+npx expo install react-native-svg
+npm install react-native-feather
+npm install react-native-animatable
+npm install @react-navigation/native
+npm install @react-navigation/native-stack
+
+

@@ -1,0 +1,23 @@
+Commandos GIT:
+
+git init
+inicializa git
+
+git status
+status dos arquivos
+
+git add .
+adiciona todos arquivos na fila de commit
+
+git commit -m "texto"
+faz o commit(Ponto de salve) dentro do branch
+
+git branch nome-do-novo-branch
+cria um novo branch(Como um salve alternativo)
+
+git checkout -b nome-do-novo-branch
+altera para o branch selecionado
+
+git switch -c nome-do-novo-branch
+Cria um novo branch e já passa para ele
+
