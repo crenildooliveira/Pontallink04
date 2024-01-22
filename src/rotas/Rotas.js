@@ -10,6 +10,7 @@ import Login from "../telas/Login/Login";
 import Section from "../telas/componentes/Section";
 import TelaTeste from '../telas/componentes/TelaTeste';
 import Perfil from "../telas/Perfil/Perfil";
+import Usuarios from '../telas/Usuarios/Usuarios';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,12 @@ export default function Rotas() {
           <Stack.Screen
           name="Perfil"
           component={Perfil}
+          options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+          name="Usuarios"
+          component={Usuarios}
           options={{ headerShown: false }}
           />
       </Stack.Navigator>
