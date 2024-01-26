@@ -1,6 +1,7 @@
-import React from "react";
-import { View,Text, StyleSheet, ScrollView,  } from "react-native";
+import React ,{useState} from "react";
+import { View,Text, StyleSheet, ScrollView, Touchable, TouchableOpacity, TextInput, Button, TouchableWithoutFeedback} from "react-native";
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 const friendStatusData = [
     { id: 1, color: 'green' },
@@ -15,12 +16,39 @@ const friendStatusData = [
   
 export default function Header() {
 
+    const navigation = useNavigation();
+
+    const [mostrarCampoPesquisa, setMostrarCampoPesquisa] = useState(false);
+    const [termoPesquisa, setTermoPesquisa] = useState('');
+
+    const alternarCampoPesquisa = () =>{
+        setMostrarCampoPesquisa(!mostrarCampoPesquisa);
+    }
+
+    const realizarPesquisa = () =>{
+        navigation.navigate("PesquisaGlobal");
+    }
+
     return (
       <View style={styles.header}>
+    
+        <TouchableOpacity onPress={alternarCampoPesquisa} >
+            <Feather name="search" size={24} color="white" />
+        </TouchableOpacity>
 
+        {mostrarCampoPesquisa && (
+            <View style={styles.barraPesquisa}>
+                <TextInput
+                placeholder="Pesquisar..."
+                value={termoPesquisa}
+                onChangeText={(texto) => setTermoPesquisa(texto)}
+                style={styles.inputPesquisa}/>
 
-        {/* Ícone de pesquisa */}
-        <Feather name="search" size={24} color="white" />
+                <TouchableWithoutFeedback onPress={realizarPesquisa} style={styles.botaoPesquisar}>
+                    <Text style={styles.textoBotao}>Pesquisar</Text>
+                </TouchableWithoutFeedback>
+            </View>
+            )}
 
 
         {/* Status dos amigos em forma de bolas */}
@@ -65,5 +93,34 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         backgroundColor: 'green', // Cor das bolas de status dos amigos
         marginHorizontal: 5,
+    },
+    inputPesquisa:{
+        flex: 1,
+        marginLeft: 10,
+        marginRight: 3,
+        color:"black",
+        backgroundColor: "white",
+        borderRadius: 8,
+        height: 45
+    },
+    barraPesquisa: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: "93%",
+    },
+    botaoPesquisar: {
+    backgroundColor: '#007BFF',
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    },
+    textoBotao: {
+    color: 'white',
+    fontSize: 18,
+    backgroundColor: "#7ac7ff",
+    height: 40,
+    borderRadius: 5,
+    padding: 6,
+    fontWeight: "bold"
     },
 })

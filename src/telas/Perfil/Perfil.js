@@ -1,9 +1,11 @@
 // TelaTeste.js
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from "react-native";
 
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
+
+import { Feather } from '@expo/vector-icons';
 
 export default function Perfil() {
     
@@ -16,11 +18,20 @@ export default function Perfil() {
                 showsVerticalScrollIndicator={false} // Oculta a barra de rolagem horizontal
             >
                 <View style={styles.container}>
+
+                    <View style={styles.configIcon}>
+                    <TouchableOpacity>
+                        <Feather name="settings" size={24} color="white" />
+                    </TouchableOpacity>
+                    </View>
                     
                     <View>
                         <Text style={styles.condominio}>Condominio x - predio 45</Text>
                     </View>
 
+                    <View>
+                        <Text style={styles.condominio}>NOMESVALDO</Text>
+                    </View>
                     
                     <View style={styles.viewColunm}>
 
@@ -76,9 +87,22 @@ export default function Perfil() {
 
                     <View>
                         <Text style={styles.bio}>
-                            Bio: Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos.
+                            Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos.
                             Hoje em dia passo meu tempo na natação, amo água e como frutas.
                         </Text>
+                    </View>
+
+                    <View style={styles.divAmigosSeguidores}>
+
+                        <View style={styles.divAmigos}>
+                            <Text style={styles.divAmigosText}>Amigos</Text>
+                            <Text style={styles.divAmigosNumber}>1550</Text>
+                        </View>
+                        
+                        <View style={styles.divSeguidores}>
+                            <Text style={styles.divAmigosText}>Seguidores</Text>
+                            <Text style={styles.divAmigosNumber}>1550</Text>
+                        </View>
                     </View>
                     
                 </View>
@@ -94,19 +118,21 @@ export default function Perfil() {
   const styles = StyleSheet.create({
     section: {
       height: "74%",
-      backgroundColor: "red",
+      backgroundColor: "white",
     },
     container: {
         flex: 1,
-        backgroundColor: '#4939BA',
+        backgroundColor: '#a3d9ff',
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: "2%"
     },
     condominio:{
         fontSize: 18,
-        color: "white",
-        backgroundColor: "black"
+        color: "black",
+        //backgroundColor: "black",
+        fontWeight: "bold",
+        paddingBottom: "2%"
     },
     circle: {
         width: 120,
@@ -126,20 +152,19 @@ export default function Perfil() {
     viewColunm:{
         flexDirection: "row", // Define a direção como linha
         justifyContent: "space-around", // Distribui os itens uniformemente ao longo do eixo principal
-        alignItems: "center", // Alinha os itens ao centro ao longo do eixo transversal (vertical)
-        
+        alignItems: "flex-start", // Alinha os itens ao centro ao longo do eixo transversal (vertical)
+        height: 120
     },
     colunaEsquerda: {
         alignItems: "flex-end", // Alinha os itens à direita
-        backgroundColor: "red"
+        paddingTop: "4%"
     },
     colunaDireita: {
       alignItems: "flex-start", // Alinha os itens à esquerda
-      backgroundColor: "green"
+      paddingTop: "4%"
     },
     viewTest: {
-        backgroundColor: "white",
-        height: "64%"
+        height: "100%"
     },
     viewTest2: {
         fontSize: 20,
@@ -149,11 +174,52 @@ export default function Perfil() {
     },
     bio:{
         fontSize: 15,
-        paddingLeft: 20,
-        paddingRight: 20,
+        padding: 9,
         fontWeight: "bold",
-        color: "white",
+        color: "black",
         textAlign: "center"
+    },
+    sa:{
+        paddingTop: "3%",
+        paddingLeft: "30%",
+        paddingRight: "30%"
+    },
+    configIcon: {
+        alignSelf: "flex-end",
+        marginRight: 10
+    },
+    divAmigosSeguidores:{
+        flexDirection: "row", // Define a direção como linha
+        justifyContent: "space-around", // Distribui os itens uniformemente ao longo do eixo principal
+        alignItems: "center", // Alinha os itens ao centro ao longo do eixo transversal (vertical)
+        padding: 10,
+        
+    },
+    divAmigos:{
+        flexDirection: "column",
+        alignItems: "center", // Centraliza horizontalmente
+        paddingRight: 50,
+    },
+
+    divSeguidores:{
+        flexDirection: "column",
+        alignItems: "center", // Centraliza horizontalmente
+    },
+    divAmigosText:{
+        textAlign: "center",
+        color: "black",
+        fontWeight: "bold",
+        fontSize: 20,
+        textAlign: "center",
+    },
+    divAmigosNumber:{
+        backgroundColor: "#d3edfd",
+        fontWeight: "bold",
+        borderWidth: 4,
+        textAlign: "center",
+        fontSize: 20,
+        width: 80,
+        paddingTop: 6
     }
 
   });

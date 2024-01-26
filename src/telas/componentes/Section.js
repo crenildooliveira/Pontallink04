@@ -9,7 +9,7 @@ export default function Section() {
           vertical
           showsVerticalScrollIndicator={false} // Oculta a barra de rolagem horizontal
         >
-          <Text>ddddddddddddddddddddddddddddddddddddddddddddddd</Text>
+          <Text>Section</Text>
         </ScrollView>
         
       </View>

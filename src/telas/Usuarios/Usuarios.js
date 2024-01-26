@@ -21,6 +21,10 @@ export default function Usuarios() {
                         <Text style={styles.condominio}>Condominio x - predio 45</Text>
                     </View>
 
+                    <View>
+                        <Text style={styles.condominio}>NOMESVALDO</Text>
+                    </View>
+
                     
                     <View style={styles.viewColunm}>
 
@@ -76,14 +80,20 @@ export default function Usuarios() {
 
                     <View>
                         <Text style={styles.bio}>
-                            Bio: Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos.
+                            Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos.
                             Hoje em dia passo meu tempo na natação, amo água e como frutas.
                         </Text>
                     </View>
 
-                    <TouchableOpacity style={styles.sa}>
-                        <Button title="Solicitar Amizade" ></Button>
-                    </TouchableOpacity>
+                    <View style={styles.divAmizadeSeguir}>
+                        <TouchableOpacity style={styles.sa}>
+                            <Button title="Solicitar Amizade" ></Button>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.sa}>
+                            <Button title="Seguir" ></Button>
+                        </TouchableOpacity>
+                    </View>
                     
                 </View>
 
@@ -160,15 +170,17 @@ export default function Usuarios() {
     bio:{
         fontSize: 15,
         padding: 9,
-
         fontWeight: "bold",
         color: "black",
         textAlign: "center"
     },
     sa:{
-        paddingTop: "3%",
-        paddingLeft: "30%",
-        paddingRight: "30%"
+        padding: 10
+    },
+    divAmizadeSeguir:{
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center"
     }
 
   });

@@ -13,7 +13,7 @@ export default function Footer() {
             </TouchableOpacity>
 
             <TouchableOpacity>
-                <Feather name="users" size={24} color="white" onPress={ () => navigation.navigate("Usuarios")} />
+            <Feather name="plus" size={24} color="white" onPress={ () => navigation.navigate("Usuarios")} />
             </TouchableOpacity>
 
             {/* Botão circular maior com ícones adicionais */}
@@ -23,11 +23,11 @@ export default function Footer() {
             
             {/* Ícones restantes da barra inferior */}
             <TouchableOpacity>
-                <Feather name="message-square" size={24} color="white" />
+                <Feather name="message-square" size={24} color="white" onPress={ () => navigation.navigate("Mensagens")}/>
             </TouchableOpacity>
 
             <TouchableOpacity>
-                <Feather name="shopping-cart" size={24} color="white" />
+                <Feather name="bell" size={24} color="white" onPress={ () => navigation.navigate("Notificacoes")}/>
             </TouchableOpacity>
         </View>
     )
