@@ -17,36 +17,36 @@ export default function Mensagens() {
             showsVerticalScrollIndicator={false} // Oculta a barra de rolagem horizontal
             >
                 
-                <View>
-                    {solicitacoesData.map((solicitacao) => (
-                        <View>
-                            <View
-                            key={solicitacao.id}
-                            style={[styles.estiloMensagem, {backgroundColor: solicitacao.color}]}
-                            >
-                                <View style={styles.imageText}>
-                                    <Image source={solicitacao.imagem} style={styles.imagemPerfil}/>
-                                    <Text style={styles.remetente}>{solicitacao.remetente}</Text>
-                                </View>
+              <View>
+                {solicitacoesData.map((solicitacao) => (
+                  <View key={solicitacao.id}>
+                    <View
+                      key={solicitacao.id}
+                      style={[styles.estiloMensagem, {backgroundColor: solicitacao.color}]}
+                    >
+                      <View style={styles.imageText}>
+                        <Image source={solicitacao.imagem} style={styles.imagemPerfil}/>
+                        <Text style={styles.remetente}>{solicitacao.remetente}</Text>
+                      </View>
                                 
 
-                                <View style={styles.botoesContainer}>
+                      <View style={styles.botoesContainer}>
                                     
-                                    <TouchableOpacity style={styles.botaoAceitar}>
-                                        <Text style={styles.textoBotao}>Aceitar</Text>
-                                    </TouchableOpacity>
+                        <TouchableOpacity style={styles.botaoAceitar}>
+                          <Text style={styles.textoBotao}>Aceitar</Text>
+                        </TouchableOpacity>
 
-                                    <TouchableOpacity style={styles.botaoRecusar}>
-                                        <Text style={styles.textoBotao}>Recusar</Text>
-                                    </TouchableOpacity>
+                        <TouchableOpacity style={styles.botaoRecusar}>
+                          <Text style={styles.textoBotao}>Recusar</Text>
+                        </TouchableOpacity>
 
-                                </View>
+                      </View>
 
                                 
-                            </View>
-                        </View>
-                    ))}
-                </View>
+                    </View>
+                  </View>
+                ))}
+              </View>
             </ScrollView>
         </View>
         <Footer/>

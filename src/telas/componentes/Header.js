@@ -26,8 +26,10 @@ export default function Header() {
     }
 
     const realizarPesquisa = () =>{
-        navigation.navigate("PesquisaGlobal");
+        navigation.navigate("Pesquisa");
     }
+
+    
 
     return (
       <View style={styles.header}>

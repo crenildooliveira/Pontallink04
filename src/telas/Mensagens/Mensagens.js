@@ -29,17 +29,17 @@ export default function Mensagens() {
                             <Feather name="plus-square" size={24} color="black" />
                           </TouchableOpacity>
                         </View>
-                    {mensagensAmigos.map((mensagens) => (
-                        <View>
-                            <View
-                            key={mensagens.id}
-                            style={[styles.estiloMensagem, {backgroundColor: mensagens.color}]}
+                        {mensagensAmigos.map((mensagens) => (
+                          <View key={mensagens.id}>
+                            <TouchableOpacity
+                              key={mensagens.id}
+                              style={[styles.estiloMensagem, { backgroundColor: mensagens.color }]}
                             >
-                                <Image source={mensagens.imagem} style={styles.imagemPerfil}/>
-                                <Text style={styles.nome}>{mensagens.nome}</Text>
-                            </View>
-                        </View>
-                    ))}
+                              <Image source={mensagens.imagem} style={styles.imagemPerfil} />
+                              <Text style={styles.nome}>{mensagens.nome}</Text>
+                            </TouchableOpacity>
+                          </View>
+                        ))}
                 </View>
             </ScrollView>
         </View>

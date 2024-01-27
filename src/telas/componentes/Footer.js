@@ -13,7 +13,7 @@ export default function Footer() {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <Feather name="plus" size={24} color="white" onPress={ () => navigation.navigate("Usuarios")} />
+            <Feather name="plus" size={24} color="white" />
             </TouchableOpacity>
 
             {/* Botão circular maior com ícones adicionais */}

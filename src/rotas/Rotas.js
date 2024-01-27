@@ -13,7 +13,7 @@ import Perfil from "../telas/Perfil/Perfil";
 import Usuarios from '../telas/Usuarios/Usuarios';
 import PesquisaUsuarios from "../telas/Pesquisa/PesquisaUsuarios";
 import Mensagens from "../telas/Mensagens/Mensagens";
-import PesquisaGlobal from "../telas/Pesquisa/PesquisaGlobal"
+import Pesquisa from "../telas/Pesquisa/Pesquisa"
 import Notificacoes from "../telas/Notificacoes/Notificacoes"
 
 const Stack = createNativeStackNavigator();
@@ -83,8 +83,8 @@ export default function Rotas() {
           />
 
           <Stack.Screen
-          name="PesquisaGlobal"
-          component={PesquisaGlobal}
+          name="Pesquisa"
+          component={Pesquisa}
           options={{ headerShown: false }}
           />
           

@@ -1,7 +1,7 @@
 const usersData = [
     { id: 1,
       condominio: "Condominio Raio Verde - Predio 15",
-      nome: 'Katarina',
+      nome: 'Programador',
       imagem: require('../assets/foto.png'),
       interesses: ["Futebol", "Basquete", "Games", "Corrida", "Natação", "Animes"],
       bio: "Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos. Hoje em dia passo meu tempo na natação, amo água e como frutas.",
@@ -34,7 +34,25 @@ const usersData = [
     bio: "Homem fiel, gosto de festas, baladas etc. Privado Pai tá ON",
     nAmigos: 15,
     nSeguidores: 2184
-  }
+  },
+  { id: 5,
+    condominio: "Condominio Raio de Sol - Predio 01",
+    nome: 'Katarina69',
+    imagem: require('../assets/foto.png'),
+    interesses: ["pato", "Correr", "lol", "Natação", "xadrex", "frutas"],
+    bio: "Sol, mar, cachoeiras.",
+    nAmigos: 5,
+    nSeguidores: 3
+  },
+  { id: 6,
+    condominio: "Condominio Veludo - Predio 13",
+    nome: 'Katarina677',
+    imagem: require('../assets/foto.png'),
+    interesses: ["festa", "CS", "Games", "Basquete", "Filmes", "Novelas"],
+    bio: "Gosto de doramas e sou alergica a animais S2",
+    nAmigos: 433,
+    nSeguidores: 178
+  },
 ];
   
   export default usersData;
