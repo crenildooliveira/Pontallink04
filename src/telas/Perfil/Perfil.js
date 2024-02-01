@@ -6,9 +6,13 @@ import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 
 import { Feather } from '@expo/vector-icons';
+import usersData from '../../DBTeste/usersData';
+import {useNavigation} from "@react-navigation/native";
+
+const usuario = usersData.find(user => user.id === 1);
 
 export default function Perfil() {
-    
+    const navigation = useNavigation();
     return (
         <>
             <Header/>
@@ -19,38 +23,45 @@ export default function Perfil() {
             >
                 <View style={styles.container}>
 
-                    <View style={styles.configIcon}>
-                    <TouchableOpacity>
-                        <Feather name="settings" size={24} color="white" />
-                    </TouchableOpacity>
+                    <View style={styles.configEdit}>
+                        <TouchableOpacity onPress={ () => navigation.navigate("EditInfo")} style={styles.EditInfo}>
+                            <Feather name="edit" size={24} color="white" />
+                        </TouchableOpacity>
+                        
+                        <View style={{ flex: 1 }} />
+
+                        <TouchableOpacity onPress={ () => navigation.navigate("Configuracoes")} style={styles.configIcon}>
+                            <Feather name="settings" size={24} color="white" />
+                        </TouchableOpacity>
                     </View>
                     
                     <View>
-                        <Text style={styles.condominio}>Condominio x - predio 45</Text>
+                        <Text style={styles.condominio}>{usuario.condominio}</Text>
                     </View>
 
                     <View>
-                        <Text style={styles.condominio}>NOMESVALDO</Text>
+                        <Text style={styles.condominio}>{usuario.nome}</Text>
                     </View>
+
                     
                     <View style={styles.viewColunm}>
 
                         <View style={styles.colunaEsquerda}>
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Futebol
+                                    {usuario.interesses[0]}
                                 </Text>
                             </View>
 
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Basquete
+                                    {usuario.interesses[1]}
                                 </Text>
                             </View>
 
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Games
+                                    {usuario.interesses[2]}
                                 </Text>
                             </View>
                         </View>
@@ -64,19 +75,19 @@ export default function Perfil() {
                         <View style={styles.colunaDireita}>
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Corrida
+                                    {usuario.interesses[3]}
                                 </Text>
                             </View>
 
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Natação
+                                    {usuario.interesses[4]}
                                 </Text>
                             </View>
 
                             <View>
                                 <Text style={styles.viewTest2}>
-                                    Animes
+                                    {usuario.interesses[5]}
                                 </Text>
                             </View>
                         </View>
@@ -87,8 +98,7 @@ export default function Perfil() {
 
                     <View>
                         <Text style={styles.bio}>
-                            Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos.
-                            Hoje em dia passo meu tempo na natação, amo água e como frutas.
+                            {usuario.bio}
                         </Text>
                     </View>
 
@@ -96,19 +106,18 @@ export default function Perfil() {
 
                         <View style={styles.divAmigos}>
                             <Text style={styles.divAmigosText}>Amigos</Text>
-                            <Text style={styles.divAmigosNumber}>1550</Text>
+                            <Text style={styles.divAmigosNumber}>{usuario.nAmigos}</Text>
                         </View>
                         
                         <View style={styles.divSeguidores}>
                             <Text style={styles.divAmigosText}>Seguidores</Text>
-                            <Text style={styles.divAmigosNumber}>1550</Text>
+                            <Text style={styles.divAmigosNumber}>{usuario.nSeguidores}</Text>
                         </View>
                     </View>
                     
                 </View>
             </ScrollView>
-            
-            
+            <View style={styles.espaco}/>
             </View>
             <Footer/>
         </>
@@ -184,9 +193,15 @@ export default function Perfil() {
         paddingLeft: "30%",
         paddingRight: "30%"
     },
+    configEdit:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: 16
+    },
+
     configIcon: {
-        alignSelf: "flex-end",
-        marginRight: 10
+    },
+    editIcon: {
     },
     divAmigosSeguidores:{
         flexDirection: "row", // Define a direção como linha
@@ -220,6 +235,10 @@ export default function Perfil() {
         fontSize: 20,
         width: 80,
         paddingTop: 6
+    },
+    espaco:{
+        margin: 30,
+        backgroundColor: "red"
     }
 
   });

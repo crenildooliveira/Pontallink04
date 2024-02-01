@@ -132,7 +132,7 @@ export default function BuscaGlobal() {
           )}
         />
 
-        
+        <View style={styles.espaco}/>
       </View>
       <Footer/>
     </View>
@@ -191,6 +191,10 @@ const styles = StyleSheet.create({
     marginRight: 8,
     marginLeft: 5
 
+  },
+  espaco:{
+      margin: 30,
+      backgroundColor: "red"
   }
 
 });

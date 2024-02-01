@@ -13,6 +13,12 @@ export default function Mensagens() {
         { id: 2, color: 'blue', nome: "Necromancer", imagem: require('../../assets/foto.png')},
         { id: 3, color: 'green', nome: "Healer", imagem: require('../../assets/foto.png')},
         { id: 4, color: 'yellow', nome: "Mage", imagem: require('../../assets/foto.png')},
+        { id: 5, color: 'red', nome: "Tank", imagem: require('../../assets/foto.png')},
+        { id: 6, color: 'blue', nome: "Mage2", imagem: require('../../assets/foto.png')},
+        { id: 7, color: 'green', nome: "Mage3", imagem: require('../../assets/foto.png')},
+        { id: 8, color: 'yellow', nome: "Mage4", imagem: require('../../assets/foto.png')},
+
+        
     ];
   return (
     <View>
@@ -41,6 +47,7 @@ export default function Mensagens() {
                           </View>
                         ))}
                 </View>
+                <View style={styles.espaco}/>
             </ScrollView>
         </View>
         <Footer/>
@@ -92,5 +99,9 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderBottomColor: "black"
 
+  },
+  espaco:{
+      margin: 30,
+      backgroundColor: "red"
   }
 });

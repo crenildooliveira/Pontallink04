@@ -11,10 +11,11 @@ import Section from "../telas/componentes/Section";
 import TelaTeste from '../telas/componentes/TelaTeste';
 import Perfil from "../telas/Perfil/Perfil";
 import Usuarios from '../telas/Usuarios/Usuarios';
-import PesquisaUsuarios from "../telas/Pesquisa/PesquisaUsuarios";
 import Mensagens from "../telas/Mensagens/Mensagens";
-import Pesquisa from "../telas/Pesquisa/Pesquisa"
-import Notificacoes from "../telas/Notificacoes/Notificacoes"
+import Pesquisa from "../telas/Pesquisa/Pesquisa";
+import Notificacoes from "../telas/Notificacoes/Notificacoes";
+import Configuracoes from "../telas/Configuracoes/Configuracoes";
+import EditInfo from "../telas/EditInfo/EditInfo";
 
 const Stack = createNativeStackNavigator();
 
@@ -71,12 +72,6 @@ export default function Rotas() {
           />
           
           <Stack.Screen
-          name="PesquisaUsuarios"
-          component={PesquisaUsuarios}
-          options={{ headerShown: false }}
-          />
-          
-          <Stack.Screen
           name="Mensagens"
           component={Mensagens}
           options={{ headerShown: false }}
@@ -91,6 +86,18 @@ export default function Rotas() {
           <Stack.Screen
           name="Notificacoes"
           component={Notificacoes}
+          options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+          name="Configuracoes"
+          component={Configuracoes}
+          options={{ headerShown: false }}
+          />
+          
+          <Stack.Screen
+          name="EditInfo"
+          component={EditInfo}
           options={{ headerShown: false }}
           />
       </Stack.Navigator>

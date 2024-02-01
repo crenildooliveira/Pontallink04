@@ -7,5 +7,6 @@ npm install react-native-feather
 npm install react-native-animatable
 npm install @react-navigation/native
 npm install @react-navigation/native-stack
+npm install react-native-sqlite-storage
 
 

@@ -48,6 +48,7 @@ export default function Mensagens() {
                 ))}
               </View>
             </ScrollView>
+            <View style={styles.espaco}/>
         </View>
         <Footer/>
     </View>
@@ -109,6 +110,10 @@ const styles = StyleSheet.create({
   },imageText:{
     flexDirection: "row",
     alignItems: "center",
+  },
+  espaco:{
+      margin: 30,
+      backgroundColor: "red"
   }
 
 });

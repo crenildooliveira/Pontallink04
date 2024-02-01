@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'black', // Cor da barra preta do header
+        backgroundColor: '#7EA5D9', // Cor da barra preta do header
         padding: 10,
         height: '13%', // 15% da tela
     },

@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity, View, Image } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import {useNavigation} from "@react-navigation/native"
+import {useNavigation} from "@react-navigation/native";
 
 export default function Footer() {
     const navigation = useNavigation();
@@ -13,7 +13,7 @@ export default function Footer() {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <Feather name="plus" size={24} color="white" />
+                <Feather name="plus" size={24} color="white" />
             </TouchableOpacity>
 
             {/* Botão circular maior com ícones adicionais */}

@@ -1,12 +1,12 @@
-const usersData = [
-    { id: 1,
-      condominio: "Condominio Raio Verde - Predio 15",
-      nome: 'Programador',
-      imagem: require('../assets/foto.png'),
-      interesses: ["Futebol", "Basquete", "Games", "Corrida", "Natação", "Animes"],
-      bio: "Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos. Hoje em dia passo meu tempo na natação, amo água e como frutas.",
-      nAmigos: 651,
-      nSeguidores: 1550
+let usersData = [
+  { id: 1,
+    condominio: "Condominio Raio Verde - Predio 15",
+    nome: 'Cristiano Ronaldo',
+    imagem: require('../assets/foto.png'),
+    interesses: ["Futebol", "Basquete", "Games", "Corrida", "Natação", "Animes"],
+    bio: "Sou um ex jogador de futebol do templo verde, joguei pôr 45 anos. Hoje em dia passo meu tempo na natação, amo água e como frutas.",
+    nAmigos: 651,
+    nSeguidores: 1550
   },
   { id: 2,
     condominio: "Condominio Praia Mansa - Predio 07",
@@ -56,3 +56,15 @@ const usersData = [
 ];
   
   export default usersData;
+
+  export const getUsersData = () => usersData;
+
+  export const atualizarUsuario = (id, novosDados) => {
+    const index = usersData.findIndex(user => user.id === id);
+    if (index !== -1) {
+      usersData[index] = { ...usersData[index], ...novosDados };
+      console.log("Usuário atualizado:", usersData[index]);
+    } else {
+      console.log("Usuário não encontrado");
+    }
+  };
