@@ -29,6 +29,7 @@ export default function EditInfo() {
   const [condominio, setCondominio] = useState(busca(1, "condominio"));
   const [nome, setNome] = useState(busca(1, "nome"));
   const [interesses, setInteresses] = useState(busca(1, "interesses"));
+  const [bio, setBio] = useState(busca(1, "bio"));
 
   // Função para manipular o estado quando o usuário digita para cada interesse
   const handleInteresseChange = (value, posicao) => {
@@ -40,8 +41,8 @@ export default function EditInfo() {
   // Função chamada ao pressionar o botão "Enviar"
   const handleEnviar = () => {
     // Aqui você pode enviar os dados atualizados para o servidor ou executar outras lógicas
-    console.log("Dados enviados:", { condominio, nome, interesses });
-    atualizarUsuario(1, { condominio, nome, interesses });
+    console.log("Dados enviados:", { condominio, nome, interesses, bio });
+    atualizarUsuario(1, { condominio, nome, interesses, bio });
 
   };
 
@@ -66,10 +67,11 @@ export default function EditInfo() {
               value={nome}
               onChangeText={(text) => setNome(text)}
             />
+            <Text style={styles.text}>Interesses:</Text>
             {/* Mapeie os interesses para renderizar os campos de entrada */}
             {interesses.map((interesse, posicao) => (
               <View key={posicao} style={styles.inputContainer2}>
-                <Text style={styles.text}>{`${posicao + 1}° Interesse:`}</Text>
+                <Text></Text>
                 <TextInput
                     style={styles.input2}
                     value={interesse}
@@ -77,6 +79,12 @@ export default function EditInfo() {
                     />
               </View>
             ))}
+            <Text style={styles.text}>Bio:</Text>
+            <TextInput
+              style={styles.input}
+              value={bio}
+              onChangeText={(text) => setBio(text)}
+            />
           </View>
           <View style={styles.containerTextInput}>
             <TouchableOpacity style={styles.button} onPress={handleEnviar}>

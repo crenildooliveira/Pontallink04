@@ -55,13 +55,18 @@ export default function BuscaGlobal() {
 
   return (
     <View>
-      <Header/>
+      
       <View style={styles.section}>
-        <TextInput
-          placeholder="Buscar globalmente"
-          value={searchTerm}
-          onChangeText={setSearchTerm}
-        />
+        
+        <View style={styles.divPesquisa}>
+          <TextInput
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChangeText={setSearchTerm}
+            style={styles.pesquisaText}
+          />
+        </View>
+        
 
         <View style={styles.botoesFiltro}>
           <TouchableOpacity
@@ -79,34 +84,35 @@ export default function BuscaGlobal() {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.fotos ? 'blue' : 'gray' }]}
-            onPress={() => toggleFiltro('fotos')}
+              style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.comunidades ? 'blue' : 'gray' }]}
+              onPress={() => toggleFiltro('comunidades')}
           >
-            <Text style={styles.textoBotaoFiltro}>Fotos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.videos ? 'blue' : 'gray' }]}
-            onPress={() => toggleFiltro('videos')}
-          >
-            <Text style={styles.textoBotaoFiltro}>Videos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.comunidades ? 'blue' : 'gray' }]}
-            onPress={() => toggleFiltro('comunidades')}
-          >
-            <Text style={styles.textoBotaoFiltro}>Comunidades</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.grupos ? 'blue' : 'gray' }]}
-            onPress={() => toggleFiltro('grupos')}
-          >
-            <Text style={styles.textoBotaoFiltro}>Grupos</Text>
-          </TouchableOpacity>
+              <Text style={styles.textoBotaoFiltro}>Comunidades</Text>
+            </TouchableOpacity>
 
           {/* Adicione botões para outros filtros da mesma maneira */}
+        </View>
+        <View style={styles.botoesFiltro}>
+            <TouchableOpacity
+              style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.fotos ? 'blue' : 'gray' }]}
+              onPress={() => toggleFiltro('fotos')}
+            >
+              <Text style={styles.textoBotaoFiltro}>Fotos</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.videos ? 'blue' : 'gray' }]}
+                onPress={() => toggleFiltro('videos')}
+            >
+                <Text style={styles.textoBotaoFiltro}>Videos</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.botaoFiltro, { backgroundColor: filtrosSelecionados.grupos ? 'blue' : 'gray' }]}
+              onPress={() => toggleFiltro('grupos')}
+            >
+              <Text style={styles.textoBotaoFiltro}>Grupos</Text>
+            </TouchableOpacity>
         </View>
         <FlatList
           data={filteredResults}
@@ -131,8 +137,6 @@ export default function BuscaGlobal() {
             </View>
           )}
         />
-
-        <View style={styles.espaco}/>
       </View>
       <Footer/>
     </View>
@@ -142,27 +146,24 @@ export default function BuscaGlobal() {
 
 const styles = StyleSheet.create({
   section: {
-    height: "74%", // 70% da tela
-    // Estilos adicionais para a seção
+    height: "87%",
+    backgroundColor: "#a3d9ff"
   },
   botoesFiltro:{
     flexDirection: "row",
-    justifyContent: "flex-start"
-  },
-  botoesFiltro: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 10,
+    justifyContent: "center",
   },
   botaoFiltro: {
     backgroundColor: 'gray',
-    paddingVertical: 8,
-    paddingHorizontal: 15,
     borderRadius: 5,
+    marginLeft: 10,
+    marginBottom: 2,
+    padding: 5
   },
   textoBotaoFiltro: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 17,
+    padding: 5,
   },
   estiloMensagem: {
     flexDirection: "row",
@@ -195,6 +196,16 @@ const styles = StyleSheet.create({
   espaco:{
       margin: 30,
       backgroundColor: "red"
+  },
+  divPesquisa:{
+    borderWidth: 5,
+    borderRadius: 3,
+    margin: 3,
+    
+  },
+  pesquisaText:{
+    height: 40,
+    fontSize: 18
   }
 
 });

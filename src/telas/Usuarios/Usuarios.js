@@ -7,6 +7,7 @@ import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 
 import usersData from '../../DBTeste/usersData';
+import { loadUsersData } from "./actions";
 
 export default function Usuarios() {
 
@@ -16,7 +17,8 @@ export default function Usuarios() {
 
     useEffect(() => {
         // Lógica para encontrar o usuário com base no termo de pesquisa
-        const usuarioEncontrado = usersData.find(user => user.nome.toLowerCase() === termoPesquisa.toLowerCase());
+        //const usuarioEncontrado = usersData.find(user => user.nome.toLowerCase() === termoPesquisa.toLowerCase());
+        const usuarioEncontrado = loadUsersData.find(user => user.nome.toLowerCase() === termoPesquisa.toLowerCase());
 
         // Atualiza o estado com as informações do usuário encontrado
         setUsuario(usuarioEncontrado);

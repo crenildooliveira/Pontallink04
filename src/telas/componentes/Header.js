@@ -18,39 +18,12 @@ export default function Header() {
 
     const navigation = useNavigation();
 
-    const [mostrarCampoPesquisa, setMostrarCampoPesquisa] = useState(false);
-    const [termoPesquisa, setTermoPesquisa] = useState('');
-
-    const alternarCampoPesquisa = () =>{
-        setMostrarCampoPesquisa(!mostrarCampoPesquisa);
-    }
-
     const realizarPesquisa = () =>{
         navigation.navigate("Pesquisa");
     }
 
-    
-
     return (
       <View style={styles.header}>
-    
-        <TouchableOpacity onPress={alternarCampoPesquisa} >
-            <Feather name="search" size={24} color="white" />
-        </TouchableOpacity>
-
-        {mostrarCampoPesquisa && (
-            <View style={styles.barraPesquisa}>
-                <TextInput
-                placeholder="Pesquisar..."
-                value={termoPesquisa}
-                onChangeText={(texto) => setTermoPesquisa(texto)}
-                style={styles.inputPesquisa}/>
-
-                <TouchableWithoutFeedback onPress={realizarPesquisa} style={styles.botaoPesquisar}>
-                    <Text style={styles.textoBotao}>Pesquisar</Text>
-                </TouchableWithoutFeedback>
-            </View>
-            )}
 
 
         {/* Status dos amigos em forma de bolas */}
@@ -59,6 +32,9 @@ export default function Header() {
             showsHorizontalScrollIndicator={false} // Oculta a barra de rolagem horizontal
             contentContainerStyle={styles.friendStatusContainer}
         >
+            <TouchableOpacity onPress={realizarPesquisa} >
+                <Feather name="search" size={24} color="white" />
+            </TouchableOpacity>
             {friendStatusData.map((friend) => (
                 <View
                     key={friend.id}
